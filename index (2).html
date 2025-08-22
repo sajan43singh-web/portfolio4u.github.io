@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Station design | Sajan's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #b6f71eac 0%, #ffd200 100%);
+            color: #222;
+            animation: bgMove 10s ease-in-out infinite alternate;
+        }
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        header {
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            padding: 50px 0 30px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 14px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(80, 80, 80, 0.08);
+            padding: 40px 32px;
+        }
+        .project-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            margin: 0 auto 32px auto;
+            display: block;
+            box-shadow: 0 2px 12px rgba(80,80,80,0.10);
+        }
+        h2 {
+            color: #2575fc;
+            margin-top: 0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px 8px;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bus Station design</h1>
+        <nav>
+            <a href="sajan.html">Home</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <img class="project-image" src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=80" alt="Vehicle Station">
+        <h2>Project Overview</h2>
+        <p>
+            The Vehicle Station project is a modern transportation hub designed for efficiency, comfort, and accessibility. This project focuses on providing a seamless experience for travelers, integrating innovative architectural elements with practical functionality.
+        </p>
+        <h2>Key Features</h2>
+        <ul>
+            <li>Spacious waiting areas with natural lighting</li>
+            <li>Clear signage and easy navigation</li>
+            <li>Eco-friendly materials and energy-efficient design</li>
+            <li>Accessible facilities for all users</li>
+            <li>Modern ticketing and information systems</li>
+        </ul>
+        <h2>Gallery</h2>
+        <div class="flipbook-center-outer">
+            <div class="flipbook-center-inner">
+                <div class="flipbook-controls">
+                    <button class="flipbook-btn" onclick="flipPrev()">&#8592; Previous</button>
+                    <button class="flipbook-btn" onclick="flipNext()">Next &#8594;</button>
+                </div>
+                <div class="flipbook" id="flipbook">
+                    <div class="flipbook-page" id="page0"><img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=80" alt="Vehicle Station Gallery 1"></div>
+                    <div class="flipbook-page" id="page1"><img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=800&q=80" alt="Vehicle Station Gallery 2"></div>
+                    <div class="flipbook-page" id="page2"><img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80" alt="Vehicle Station Gallery 3"></div>
+                </div>
+            </div>
+        </div>
+        <style>
+        .flipbook-center-outer {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .flipbook-center-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .flipbook {
+            width: 420px;
+            height: 540px;
+            margin: 0 auto;
+            perspective: 2000px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .flipbook-page {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(80,80,80,0.15);
+            position: absolute;
+            top: 0; left: 0;
+            overflow: hidden;
+            transform-origin: left center;
+            transition: transform 0.8s cubic-bezier(.23,1.01,.32,1), z-index 0s 0.8s;
+            z-index: 1;
+            cursor: pointer;
+        }
+        .flipbook-page img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            background: #fff;
+        }
+        .flipbook-page.flipped {
+            transform: rotateY(-180deg);
+            z-index: 0;
+        }
+        .flipbook-controls {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+        .flipbook-btn {
+            background: linear-gradient(90deg, #6a11cb 0%, #ffd700 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 24px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(80,80,80,0.10);
+            transition: background 0.2s;
+        }
+        .flipbook-btn:active {
+            background: linear-gradient(90deg, #ffd700 0%, #6a11cb 100%);
+        }
+        </style>
+        <script>
+        let currentPage = 0;
+        const totalPages = 3;
+        function updateBook() {
+            for (let i = 0; i < totalPages; i++) {
+                const page = document.getElementById('page'+i);
+                if (i < currentPage) {
+                    page.classList.add('flipped');
+                } else {
+                    page.classList.remove('flipped');
+                }
+            }
+        }
+        function flipNext() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                updateBook();
+            }
+        }
+        function flipPrev() {
+            if (currentPage > 0) {
+                currentPage--;
+                updateBook();
+            }
+        }
+        updateBook();
+        </script>
+        <h2>My Role</h2>
+        <p>
+            I was responsible for the overall design concept, 3D visualization, and user experience planning. My focus was on creating a welcoming and efficient space that meets the needs of both travelers and staff.
+        </p>
+        <div style="text-align:center; margin-top:40px;">
+            <a href="sajan.html" class="return-home-btn">Return to Home</a>
+        </div>
+        <style>
+        .return-home-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #2575fc 0%, #ffd700 100%);
+            color: #fff;
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-top: 16px;
+            box-shadow: 0 2px 8px rgba(80,80,80,0.10);
+            transition: background 0.2s;
+        }
+        .return-home-btn:hover {
+            background: linear-gradient(90deg, #ffd700 0%, #2575fc 100%);
+            color: #222;
+        }
+        </style>
+    </div>
+</body>
+</html>
